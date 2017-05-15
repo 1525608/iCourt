@@ -1,0 +1,52 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="CO5027_iCourt.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>iCourt</title>
+    <link href="Content/StyleSheet.css" rel="stylesheet" type="text/css" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+
+    <nav class="topnav" id="navigation">
+        <a href="default.aspx" class="main">iCOURT</a>
+        <a href="default.aspx">Home</a>
+        <a href="productdetails.aspx">Facilities</a>
+        <a href="bookings.aspx">Bookings</a>
+        <a href="contact.aspx">Contact</a>
+        <a href="login.aspx">Login</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+    </nav>
+
+    <div id="wrapper">
+
+        <%--<div id="headersearch">
+                    <form id="newsearch" action="#" method="get">
+                        <input type="text" name="txtSearch" id="txtSearch" />
+                        <input type="submit" value="Search" id="searchbutton" class="sub_btn" />
+                    </form>
+                </div>--%>
+
+        <div id="banner"></div>
+
+        <div id="contentWrapper">
+            <asp:ContentPlaceHolder ID="bodyContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+    </div>
+
+</body>
+<footer>
+    <p>Copyright @ 2017 A.iCourt</p>
+    <a href="http://validator.w3.org/check?uri=referer">Validate HTML</a>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">Validate CSS</a>
+    <a href="http://achecker.ca/checker/?uri=referer">Check WCAG</a>
+    <script type="text/javascript" src="Content/Scripts.js"></script>
+</footer>
+</html>
