@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CO5027_iCourt
+namespace CO5027_iCourt.Admin
 {
 
 
-    public partial class login
+    public partial class AdminMain
     {
     }
 }

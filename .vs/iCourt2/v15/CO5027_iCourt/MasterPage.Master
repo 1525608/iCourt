@@ -7,28 +7,35 @@
     <title>iCourt</title>
     <link href="Content/StyleSheet.css" rel="stylesheet" type="text/css" />
 
-    <nav class="topnav" id="navigation">
-        <a href="default.aspx" class="main">iCOURT</a>
-        <a href="default.aspx">Home</a>
-        <a href="productdetails.aspx">Facilities</a>
-        <a href="bookings.aspx">Bookings</a>
-        <a href="contact.aspx">Contact</a>
-        <a href="register.aspx">Sign Up</a>
-        <a href="login.aspx">Login</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
-    </nav>
-
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
+    <form runat="server">
+        
+        <nav class="topnav" id="navigation">
+            <asp:HyperLink ID="lnkLogo" NavigateUrl="~/default.aspx" CssClass="main" runat="server">iCOURT</asp:HyperLink>
+            <asp:HyperLink ID="lnkDefault" NavigateUrl="~/default.aspx" runat="server">Home</asp:HyperLink>
+            <asp:HyperLink ID="lnkFacilities" NavigateUrl="~/default.aspx" runat="server">Facilities</asp:HyperLink>
+            <asp:HyperLink ID="lnkBookings" NavigateUrl="~/default.aspx" runat="server">Bookings</asp:HyperLink>
+            <asp:HyperLink ID="lnkContact" NavigateUrl="~/contact.aspx" runat="server">Contact</asp:HyperLink>
+            <div>
+                <asp:HyperLink ID="lnkRegister" NavigateUrl="~/Account/register.aspx" runat="server">Sign Up</asp:HyperLink>
+                <asp:HyperLink ID="litStatus" runat="server"></asp:HyperLink>
+            </div>
+            <div>
+                <asp:HyperLink ID="lnkLogin" NavigateUrl="~/Account/login.aspx" runat="server">Login</asp:HyperLink>
+                <asp:LinkButton ID="lnkLogout" runat="server" OnClick="lnkLogout_Click">Log out</asp:LinkButton>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+        </nav>
 
-    
+        <div id="wrapper">
+            <asp:ContentPlaceHolder ID="bodyContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
 
-    <div id="wrapper">
-        <asp:ContentPlaceHolder ID="bodyContent" runat="server">
-        </asp:ContentPlaceHolder>
-    </div>
+    </form>
 
 </body>
 <footer>

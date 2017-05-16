@@ -3,10 +3,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="bodyContent" runat="server">
     
-    <form runat="server">
         <div class="container">
             <h3>Join Us!</h3>
-
+            <asp:Literal runat="server" ID="litRegisterError" Text=""></asp:Literal>
             <asp:Label AssociatedControlID="txtEmail" ID="lblEmail" runat="server" Text="Email"></asp:Label>
             <asp:TextBox TextMode="Email" ID="txtEmail" runat="server" placeholder="Please enter your email here" />
 
@@ -25,6 +24,5 @@
                 <asp:Button ID="btnSignUp" CssClass="signupbtn" Type="Button" runat="server" Text="Sign Up" OnClick="SignUp_Click" />
             </div>
         </div>
-    </form>
 
 </asp:Content>

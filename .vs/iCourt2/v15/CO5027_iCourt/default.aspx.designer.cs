@@ -13,58 +13,13 @@ namespace CO5027_iCourt {
     public partial class _default {
         
         /// <summary>
-        /// badminton control.
+        /// rptFacilities control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image badminton;
-        
-        /// <summary>
-        /// basketball control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image basketball;
-        
-        /// <summary>
-        /// netball control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image netball;
-        
-        /// <summary>
-        /// volleyball control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image volleyball;
-        
-        /// <summary>
-        /// dodgeball control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image dodgeball;
-        
-        /// <summary>
-        /// futsal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image futsal;
+        protected global::System.Web.UI.WebControls.Repeater rptFacilities;
         
         /// <summary>
         /// lblFacilities control.

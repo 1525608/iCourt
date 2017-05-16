@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CO5027_iCourt.App_Data
+namespace CO5027_iCourt.Models
 {
     using System;
     using System.Collections.Generic;

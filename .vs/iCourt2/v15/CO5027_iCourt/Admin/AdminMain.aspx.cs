@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace CO5027_iCourt
+namespace CO5027_iCourt.Admin
 {
-    public partial class login : System.Web.UI.Page
+    public partial class AdminMain : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

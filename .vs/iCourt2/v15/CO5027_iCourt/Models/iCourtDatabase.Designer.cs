@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Azammeh\Source\Repos\iCourt2\.vs\iCourt2\v15\CO5027_iCourt\App_Data\iCourtDatabase.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Azammeh\Source\Repos\iCourt2\.vs\iCourt2\v15\CO5027_iCourt\Models\iCourtDatabase.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

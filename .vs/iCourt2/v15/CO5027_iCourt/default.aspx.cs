@@ -1,12 +1,28 @@
 ﻿namespace CO5027_iCourt
 {
     using System;
-    using App_Data;
+    using System.Configuration;
+    using System.Data;
+    using System.Data.SqlClient;
+    using Models;
 
     public partial class _default : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["iCourtDatabaseConnection"].ConnectionString;
+                DataTable dt = new DataTable();
+                SqlConnection conn = new SqlConnection(connectionString);
+                using (conn)
+                {
+                    SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Facility", conn);
+                    da.Fill(dt);
+                }
+                this.rptFacilities.DataSource = dt;
+                this.rptFacilities.DataBind();
+            }
         }
 
         protected void BtnBook_Click(object sender, EventArgs e)
@@ -16,7 +32,6 @@
 
             try
             {
-                //TODO: Validation for unavailable dates and times
                 booking = new Booking();
                 booking.FacilityId = Int32.Parse(this.ddlFacilities.Text);
                 if (!string.IsNullOrEmpty(this.txtStartDate.Text))
