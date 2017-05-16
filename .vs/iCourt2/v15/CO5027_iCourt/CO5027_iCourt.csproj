@@ -49,10 +49,18 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -71,21 +79,38 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bookings.aspx" />
     <Content Include="contact.aspx" />
-    <Content Include="Content\BannerLogo1.jpg" />
+    <Content Include="Images\BannerLogo1.jpg" />
+    <Content Include="App_Data\iCourtDatabase.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>iCourtDatabase.edmx</DependentUpon>
+      <LastGenOutput>iCourtDatabase.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_Data\iCourtDatabase.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>iCourtDatabase.edmx</DependentUpon>
+      <LastGenOutput>iCourtDatabase.cs</LastGenOutput>
+    </Content>
     <Content Include="Images\facilities\badminton.jpg" />
     <Content Include="Images\facilities\basketball.jpg" />
     <Content Include="Images\facilities\dodgeball.jpg" />
     <Content Include="Images\facilities\futsal.jpg" />
     <Content Include="Images\facilities\netball.jpg" />
     <Content Include="Images\facilities\volley.jpg" />
-    <Content Include="Content\nav_background.jpg" />
-    <Content Include="Content\Scripts.js" />
+    <Content Include="Images\nav_background.jpg" />
+    <Content Include="register.aspx" />
+    <Content Include="Scripts\icourt.js" />
     <Content Include="default.aspx" />
     <Content Include="login.aspx" />
     <Content Include="packages.config" />
     <Content Include="MasterPage.Master" />
+    <EntityDeploy Include="App_Data\iCourtDatabase.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>iCourtDatabase.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="App_Data\iCourtDatabase.edmx.diagram">
+      <DependentUpon>iCourtDatabase.edmx</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -95,19 +120,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="productdetails.aspx" />
     <Content Include="Content\StyleSheet.css" />
+    <None Include="Scripts\jquery-1.4.4-vsdoc.js" />
+    <Content Include="Scripts\GoogleMaps.js" />
+    <Content Include="Scripts\jquery-1.4.4.js" />
+    <Content Include="Scripts\jquery-1.4.4.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="bookings.aspx.cs">
-      <DependentUpon>bookings.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="bookings.aspx.designer.cs">
-      <DependentUpon>bookings.aspx</DependentUpon>
+    <Compile Include="App_Data\Booking.cs">
+      <DependentUpon>iCourtDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="contact.aspx.cs">
       <DependentUpon>contact.aspx</DependentUpon>
@@ -123,8 +150,26 @@
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_Data\Facility.cs">
+      <DependentUpon>iCourtDatabase.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\iCourtDatabase.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>iCourtDatabase.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\iCourtDatabase.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>iCourtDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\iCourtDatabase.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>iCourtDatabase.edmx</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
@@ -140,18 +185,18 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="productdetails.aspx.cs">
-      <DependentUpon>productdetails.aspx</DependentUpon>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="register.aspx.cs">
+      <DependentUpon>register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="productdetails.aspx.designer.cs">
-      <DependentUpon>productdetails.aspx</DependentUpon>
+    <Compile Include="register.aspx.designer.cs">
+      <DependentUpon>register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Net.Mail;
-
-
-namespace CO5027_iCourt
+﻿namespace CO5027_iCourt
 {
+    using System;
+    using System.Net.Mail;
+
     public partial class contact : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
@@ -17,10 +11,9 @@ namespace CO5027_iCourt
         }
 
         protected void Send_Click(object sender, EventArgs e)
-
         {
-            if (!IsValid)
-                {
+            if (!this.IsValid)
+            {
                 return;
             }
             else
@@ -29,19 +22,18 @@ namespace CO5027_iCourt
                 MailMessage mailMsg = new MailMessage();
 
                 //set address
-
                 mailMsg.From = new MailAddress("another@mail-address.com");
                 mailMsg.To.Add("icourt2017@gmail.com");
 
                 //set content
-                mailMsg.Subject = "Message via gmail from" + senderName.Text.ToString();
+                mailMsg.Subject = "Message via gmail from " + this.txtName.Text;
                 mailMsg.IsBodyHtml = true;
                 mailMsg.Body = "<html><body>"
-                     + senderEmail.Text.ToString() +
-                     "<br><br>"
-                     + subject.Text.ToString() +
-                     "<br><br>"
-                     + message.Text.ToString() +
+                     + this.txtEmail.Text
+                     + Environment.NewLine //"<br/>"
+                     + this.txtSubject.Text +
+                     "<br/>"
+                     + this.txtMessage.Text +
                      "</body></html>";
 
                 //send msgs
@@ -51,8 +43,8 @@ namespace CO5027_iCourt
                 smtp.Send(mailMsg);
 
                 //msg status
-                Status.ForeColor = System.Drawing.Color.Blue;
-                Status.Text = "Mail was sent successfully!";
+                this.lblStatus.ForeColor = System.Drawing.Color.Blue;
+                this.lblStatus.Text = "Mail was sent successfully!";
               }
             }
             
