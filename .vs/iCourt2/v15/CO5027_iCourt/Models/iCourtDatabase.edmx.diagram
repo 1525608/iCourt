@@ -8,6 +8,16 @@
         <EntityTypeShape EntityType="iCourt.Models.Booking" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="iCourt.Models.Facility" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
         <AssociationConnector Association="iCourt.Models.FK_Booking_Facility" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="iCourt.Models.C__MigrationHistory" Width="1.5" PointX="6.375" PointY="5.125" />
+        <EntityTypeShape EntityType="iCourt.Models.AspNetRole" Width="1.5" PointX="3.75" PointY="6" />
+        <EntityTypeShape EntityType="iCourt.Models.AspNetUserClaim" Width="1.5" PointX="3" PointY="11.875" />
+        <EntityTypeShape EntityType="iCourt.Models.AspNetUserLogin" Width="1.5" PointX="3" PointY="9.25" />
+        <EntityTypeShape EntityType="iCourt.Models.AspNetUser" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="iCourt.Models.Equipment" Width="1.5" PointX="8.375" PointY="1.125" />
+        <AssociationConnector Association="iCourt.Models.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="iCourt.Models.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="iCourt.Models.FK_Booking_AspNetUsers" />
+        <AssociationConnector Association="iCourt.Models.AspNetUserRoles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

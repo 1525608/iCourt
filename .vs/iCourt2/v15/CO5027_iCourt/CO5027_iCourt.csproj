@@ -103,7 +103,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Admin\AdminMain.aspx" />
+    <Content Include="Admin\Manage.aspx" />
     <Content Include="contact.aspx" />
     <Content Include="Images\BannerLogo1.jpg" />
     <Content Include="Models\iCourtDatabase.Context.tt">
@@ -162,12 +162,24 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\AdminMain.aspx.cs">
-      <DependentUpon>AdminMain.aspx</DependentUpon>
+    <Compile Include="Admin\Manage.aspx.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\AdminMain.aspx.designer.cs">
-      <DependentUpon>AdminMain.aspx</DependentUpon>
+    <Compile Include="Admin\Manage.aspx.designer.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetRole.cs">
+      <DependentUpon>iCourtDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUser.cs">
+      <DependentUpon>iCourtDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserClaim.cs">
+      <DependentUpon>iCourtDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserLogin.cs">
+      <DependentUpon>iCourtDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Booking.cs">
       <DependentUpon>iCourtDatabase.tt</DependentUpon>
@@ -185,6 +197,12 @@
     </Compile>
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C__MigrationHistory.cs">
+      <DependentUpon>iCourtDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Equipment.cs">
+      <DependentUpon>iCourtDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Facility.cs">
       <DependentUpon>iCourtDatabase.tt</DependentUpon>

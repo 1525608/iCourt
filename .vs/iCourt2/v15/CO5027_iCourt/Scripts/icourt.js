@@ -24,7 +24,7 @@ $(document).ready(function() {
         {
             required: true,
             messages: {
-                required: "Email address is requireds"
+                required: "Email address is required."
             }
         });
 });

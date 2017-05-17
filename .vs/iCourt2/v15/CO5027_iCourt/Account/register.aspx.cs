@@ -11,12 +11,18 @@
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void Cancel_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                this.Response.Redirect("~/default.aspx");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         protected void SignUp_Click(object sender, EventArgs e)
@@ -39,7 +45,6 @@
                     try
                     {
                         //Create user object
-                        //Database will be created/expanded automatically
                         IdentityResult result = manager.Create(user, this.txtPassword.Text);
 
                         if (result.Succeeded)
@@ -48,12 +53,11 @@
                             var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
 
                             //Set to log in new user by Cookie.
-                            var userIdentity =
-                                manager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
+                            var userIdentity = manager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
 
                             //Log in the new user and redirect to homepage
                             authenticationManager.SignIn(new AuthenticationProperties(), userIdentity);
-                            Response.Redirect("~/default.aspx");
+                            this.Response.Redirect("~/default.aspx");
                         }
                         else
                         {

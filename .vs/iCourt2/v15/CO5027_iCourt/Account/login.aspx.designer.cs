@@ -13,13 +13,13 @@ namespace CO5027_iCourt {
     public partial class login {
         
         /// <summary>
-        /// litLoginError control.
+        /// lblLoginError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litLoginError;
+        protected global::System.Web.UI.WebControls.Label lblLoginError;
         
         /// <summary>
         /// lblEmail control.

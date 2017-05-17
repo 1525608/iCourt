@@ -12,17 +12,11 @@ namespace CO5027_iCourt.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Booking
+    public partial class C__MigrationHistory
     {
-        public int BookingId { get; set; }
-        public int FacilityId { get; set; }
-        public string StartTime { get; set; }
-        public string EndTime { get; set; }
-        public Nullable<System.DateTime> StartDate { get; set; }
-        public Nullable<System.DateTime> EndDate { get; set; }
-        public string UserId { get; set; }
-    
-        public virtual Facility Facility { get; set; }
-        public virtual AspNetUser AspNetUser { get; set; }
+        public string MigrationId { get; set; }
+        public string ContextKey { get; set; }
+        public byte[] Model { get; set; }
+        public string ProductVersion { get; set; }
     }
 }

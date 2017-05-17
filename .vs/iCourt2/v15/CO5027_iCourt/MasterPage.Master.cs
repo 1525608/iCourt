@@ -15,16 +15,16 @@ namespace CO5027_iCourt
             {
                 try
                 {
-                    var user = Context.User.Identity;
+                    var user = this.Context.User.Identity;
 
                     if (user.IsAuthenticated)
                     {
-                        this.litStatus.Text = Context.User.Identity.Name;
+                        this.litStatus.Text = this.Context.User.Identity.Name;
 
                         this.lnkLogin.Visible = false;
                         this.lnkRegister.Visible = false;
 
-                        this.lnkLogout.Visible = true;
+                        this.btnLogout.Visible = true;
                         this.litStatus.Visible = true;
                     }
                     else
@@ -32,7 +32,7 @@ namespace CO5027_iCourt
                         this.lnkLogin.Visible = true;
                         this.lnkRegister.Visible = true;
 
-                        this.lnkLogout.Visible = false;
+                        this.btnLogout.Visible = false;
                         this.litStatus.Visible = false;
                     }
                 }
@@ -44,14 +44,21 @@ namespace CO5027_iCourt
 
         }
 
-        protected void lnkLogout_Click(object sender, EventArgs e)
+        protected void btnLogout_Click(object sender, EventArgs e)
         {
             try
             {
                 var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
+
+                //Remove session
+                if (!string.IsNullOrEmpty("CurrentUserSession") && HttpContext.Current.Session["CurrentUserSession"] != null)
+                {
+                    HttpContext.Current.Session.Remove("CurrentUserSession");
+                }
+
                 authenticationManager.SignOut();
 
-                Response.Redirect("~/default.aspx");
+                this.Response.Redirect("~/default.aspx");
             }
             catch (Exception ex)
             {

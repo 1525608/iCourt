@@ -67,13 +67,13 @@ namespace CO5027_iCourt {
         protected global::System.Web.UI.WebControls.Label lblSubject;
         
         /// <summary>
-        /// txtSubject control.
+        /// ddlSubject control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSubject;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSubject;
         
         /// <summary>
         /// lblMessage control.

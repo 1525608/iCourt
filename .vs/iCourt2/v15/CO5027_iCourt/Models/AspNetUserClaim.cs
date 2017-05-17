@@ -12,17 +12,13 @@ namespace CO5027_iCourt.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Booking
+    public partial class AspNetUserClaim
     {
-        public int BookingId { get; set; }
-        public int FacilityId { get; set; }
-        public string StartTime { get; set; }
-        public string EndTime { get; set; }
-        public Nullable<System.DateTime> StartDate { get; set; }
-        public Nullable<System.DateTime> EndDate { get; set; }
+        public int Id { get; set; }
         public string UserId { get; set; }
+        public string ClaimType { get; set; }
+        public string ClaimValue { get; set; }
     
-        public virtual Facility Facility { get; set; }
         public virtual AspNetUser AspNetUser { get; set; }
     }
 }

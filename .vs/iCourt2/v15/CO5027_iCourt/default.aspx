@@ -81,6 +81,7 @@
 
     <div id="bookFacilities" class="tabContent">
         <h1>Book now!</h1>
+        <asp:Label ID="lblResult" runat="server" CssClass="error"></asp:Label>
         <asp:Label AssociatedControlID="ddlFacilities" ID="lblFacilities" runat="server" Text="Type of Facility"></asp:Label>
         <asp:DropDownList ID="ddlFacilities" runat="server" Class="form-control">
             <asp:ListItem Enabled="true" Text="Select Facility" Value="0"></asp:ListItem>

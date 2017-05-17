@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using Microsoft.Owin.Security;
-
-namespace CO5027_iCourt
+﻿namespace CO5027_iCourt
 {
+    using System;
+    using System.Web;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Microsoft.Owin.Security;
@@ -16,7 +10,6 @@ namespace CO5027_iCourt
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void Login_Click(object sender, EventArgs e)
@@ -25,8 +18,7 @@ namespace CO5027_iCourt
             {
                 UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
 
-                userStore.Context.Database.Connection.ConnectionString = System.Configuration.ConfigurationManager
-                    .ConnectionStrings["iCourtDatabaseConnection"].ConnectionString;
+                userStore.Context.Database.Connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["iCourtDatabaseConnection"].ConnectionString;
 
                 UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
 
@@ -45,11 +37,11 @@ namespace CO5027_iCourt
                     }, userIdentity);
 
                     //Redirect user to homepage
-                    Response.Redirect("~/default.aspx");
+                    this.Response.Redirect("~/default.aspx");
                 }
                 else
                 {
-                    this.litLoginError.Text = "Invalid email or password. Please try again.";
+                    this.lblLoginError.Text = "Invalid email or password. Please try again.";
                 }
             }
             catch (Exception ex)
@@ -57,12 +49,31 @@ namespace CO5027_iCourt
                 Console.WriteLine(ex);
             }
         }
-        
+
         private void LogUserIn(UserManager<IdentityUser> userManager, IdentityUser user)
         {
-            var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
-            var userIdentity = userManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
-            authenticationManager.SignIn(new AuthenticationProperties(){}, userIdentity);
+            try
+            {
+                var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
+                var userIdentity = userManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
+                authenticationManager.SignIn(new AuthenticationProperties() { }, userIdentity);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+
+        protected void Cancel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Response.Redirect("~/default.aspx");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
     }
 }

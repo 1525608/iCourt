@@ -30,11 +30,11 @@
                 mailMsg.IsBodyHtml = true;
                 mailMsg.Body = "<html><body>"
                      + this.txtEmail.Text
-                     + Environment.NewLine //"<br/>"
-                     + this.txtSubject.Text +
-                     "<br/>"
-                     + this.txtMessage.Text +
-                     "</body></html>";
+                     + "<br/>"
+                     + this.ddlSubject.SelectedValue
+                     + "<br/>"
+                     + this.txtMessage.Text
+                     + "</body></html>";
 
                 //send msgs
                 SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);

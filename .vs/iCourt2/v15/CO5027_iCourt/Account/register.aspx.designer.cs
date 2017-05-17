@@ -19,7 +19,7 @@ namespace CO5027_iCourt {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litRegisterError;
+        protected global::System.Web.UI.WebControls.Label litRegisterError;
         
         /// <summary>
         /// lblEmail control.
@@ -76,15 +76,6 @@ namespace CO5027_iCourt {
         protected global::System.Web.UI.WebControls.TextBox txtConfirmPassword;
         
         /// <summary>
-        /// btnCancel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancel;
-        
-        /// <summary>
         /// btnSignUp control.
         /// </summary>
         /// <remarks>
@@ -92,5 +83,14 @@ namespace CO5027_iCourt {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSignUp;
+        
+        /// <summary>
+        /// btnCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancel;
     }
 }
